@@ -28,6 +28,8 @@ class myGrid(GridLayout):
         password=self.password.text
         #print(f'Hi {username} your Password Is {password}')
         self.add_widget(Label(text=f'Hi {username} your Password Is {password}',bold=True))
+        self.username.text=''
+        self.password.text=''
 
 
 class MYApp(App):
