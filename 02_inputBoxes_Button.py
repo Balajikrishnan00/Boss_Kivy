@@ -14,7 +14,7 @@ class myGrid(GridLayout):
 
         self.pos_hint={'center_x':.5,'center_y':.5}
         self.username=TextInput(hint_text='Username',multiline=False)
-        self.password=TextInput(hint_text='Password',password=True)
+        self.password=TextInput(hint_text='Password',password=True,multiline=False)
         self.btn=Button(text='Login',pos_hint={'center_x':.5,'center_y':.5},color=(1, 1, 1,1),background_color=(1030, 0, 0))
 
 
@@ -26,10 +26,13 @@ class myGrid(GridLayout):
     def press(self,i):
         username=self.username.text
         password=self.password.text
-        print(f'Hi {username} your Password Is {password}')
+        #print(f'Hi {username} your Password Is {password}')
+        self.add_widget(Label(text=f'Hi {username} your Password Is {password}',bold=True))
+
 
 class MYApp(App):
     def build(self):
+
         return myGrid()
 
 MYApp().run()
