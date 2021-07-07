@@ -31,7 +31,12 @@ class MyGrid(GridLayout):
         name=self.name.text
         pizza=self.pizza.text
         color=self.color.text
-        print(name,pizza,color)
+        #print(name,pizza,color)
+        self.add_widget(Label(text=f'%s %s %s'%(name,pizza,color)))
+
+        self.name.text=''
+        self.pizza.text=''
+        self.color.text=''
 
 
 
