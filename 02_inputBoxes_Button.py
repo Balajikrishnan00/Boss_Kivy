@@ -4,6 +4,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.core.window import Window
+
 Window.core=(220,480)
 
 class myGrid(GridLayout):
