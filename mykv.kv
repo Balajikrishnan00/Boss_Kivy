@@ -1,0 +1,33 @@
+<mywidget>
+    name:Name
+    pizza:Pizza
+    color:Color
+    BoxLayout:
+        size:root.width,root.height
+        orientation:'vertical'
+        canvas:
+            Color:
+                rgb:(0,0,0,1)
+            Rectangle:
+                size:self.size
+                pos:self.pos
+        GridLayout:
+            cols:2
+            Label:
+                text:'Name'
+            TextInput:
+                id:Name
+            Label:
+                text:'Pizza'
+            TextInput:
+                id:Pizza
+            Label:
+                text:'Color'
+            TextInput:
+                id:Color
+        Button:
+            text:'Submit'
+            font_size:32
+            on_press:self.press
+
+
