@@ -1,11 +1,9 @@
 widgetsExample:
-
 <widgetsExample>:
-    orientation:"vertical"
-    cols:3
+    cols:2
     Button:
         text:'Click Here'
-        on_press:
-
+        on_press:root.on_button_click()
     Label:
-        text:'HELLO'
+        text:root.my_text
+
