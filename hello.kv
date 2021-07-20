@@ -1,0 +1,80 @@
+scrollview:
+
+
+<boxlayout@BoxLayout>:
+    orientation:'vertical'
+
+
+    padding:100
+    spacing:10
+    Label:
+        text:'BoxLayout'
+        bold:True
+        pos_hint:{'center_x':.5,'center_y':1}
+
+    Button:
+        text:'B1'
+        size_hint:(.2,.1)
+        pos_hint:{'center_x':.5,'center_y':.5}
+
+    Button:
+        text:'B2'
+        size_hint:(.2,.1)
+        pos_hint:{'center_x':.5,'center_y':.5}
+    Button:
+        text:'B3'
+        size_hint:(.2,.1)
+        pos_hint:{'center_x':.5,'center_y':.5}
+    Button:
+        text:'B4'
+        size_hint:(.2,.1)
+        pos_hint:{'center_x':.5,'center_y':.5}
+    Button:
+        text:'B5'
+        size_hint:(.2,.1)
+        pos_hint:{'center_x':.5,'center_y':.5}
+<anchorlayout@AnchorLayout>:
+    anchor_x:'center'
+    anchor_y:'top'
+
+    Button:
+        text:'Hi'
+        size_hint:(.2,.1)
+<gridlayout@GridLayout>:
+    size_hint:(None,None)
+    width:400
+    height:100
+    cols:2
+    pos_hint:{'center_x':.5,'center_y':.5}
+    Label:
+        text:'username'
+    TextInput:
+    Label:
+        text:'password'
+    TextInput:
+<stacklayout@StackLayout>:
+
+    Button:
+        text:'1'
+    Button:
+        text:'2'
+    Button:
+        text:'3'
+    Button:
+        text:'4'
+
+    Button:
+        text:'5'
+    Button:
+        text:'6'
+    Button:
+        text:'7'
+    Button:
+        text:'8'
+<Button>:
+    size_hint:(.2,.1)
+<scrollview@ScrollView>:
+
+
+    scacklayout:
+

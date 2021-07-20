@@ -1,0 +1,62 @@
+page:
+
+<page@PageLayout>:
+    mybox:
+
+
+<Example@ScrollView>:
+    #stacklayout:
+        #size_hint:1,None
+        #height:self.minimun.height
+
+
+<stacklayout>:
+    #orientation:'lr-tb'
+    #padding:(left,top,right,bottom)
+    #padding:(dp(60),dp(20))
+
+
+<mygrid@GridLayout>:
+    rows:2
+    #cols:2
+    Button:
+        text:'a'
+        #size_hint:(.5,.1)
+        size_hint:(None,None)
+        width:'100dp'
+        height:'100dp'
+    mybox:
+    Button:
+        text:'c'
+    Button:
+        text:'d'
+        size_hint:(.5,.1)
+    Button:
+        text:'e'
+    Button:
+        text:'f'
+
+<pepul>:
+    BoxLayout:
+        size_hint:(None,1)
+        Label:
+            text:'Pepul'
+
+
+<mybox>:
+    orientation:'vertical'
+    Button:
+        text:'1'
+        size_hint:.2,.1
+        #size_hint:('10dp','10dp')
+        pos_hint:{'center_x':.5}
+
+    Button:
+        text:'2'
+        #size_hint:('10dp','10dp')
+        size_hint:.2,.1
+        pos_hint:{'center_x':.5}
+    Button:
+        text:'3'
+        #size_hint:('10dp','10dp')
+        size_hint:.2,.1
