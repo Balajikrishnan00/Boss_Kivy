@@ -3,9 +3,9 @@ from kivy.lang import Builder
 
 image="""
 Image:
-    source:
+    source:'flower1.jpg'
     pos_hint:{'center_x':.5,'center_y':.5}
-    size_hint:.2,.1
+    size_hint:.5,.3
     
 """
 
