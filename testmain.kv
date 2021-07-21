@@ -1,9 +1,29 @@
 widgetsExample:
 <widgetsExample>:
-    cols:2
+
+    #rows:3
+    cols:3
     Button:
-        text:'Click Here'
-        on_press:root.on_button_click()
+        text:'+'
+        size_hint_x:None
+        size_hint_y:None
+        width:sp(100)
+        height:sp(50)
+        on_press:root.plus()
     Label:
         text:root.my_text
+        size_hint_x:None
+        size_hint_y:None
+        width:sp(100)
+        height:sp(50)
+
+    Button:
+        text:'-'
+        bold:True
+        font_size:10
+        size_hint_x:None
+        size_hint_y:None
+        width:sp(100)
+        height:sp(50)
+        on_press:root.minus()
 

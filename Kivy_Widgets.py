@@ -3,13 +3,23 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.properties import StringProperty
 
 class widgetsExample(GridLayout):
-    my_text=StringProperty('HEllO')
-    count=1
-    def on_button_click(self):
 
+    my_text=StringProperty('0')
+    count=0
+    def plus(self):
+        self.count += 1
         print('Button Clicked')
         self.my_text=str(self.count)
-        self.count+=1
+    def minus(self):
+        self.count=int(self.my_text)
+        if self.count == 0:
+            return 0
+        else:
+            self.count-=1
+            self.my_text=str(self.count)
+
+
+
 
 
 
