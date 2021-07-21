@@ -4,11 +4,12 @@ from kivy.properties import StringProperty
 
 class widgetsExample(GridLayout):
 
-    my_text=StringProperty('0')
-    count=0
+    my_text=StringProperty('1')
+    count=1
     def plus(self):
-        self.count += 1
+
         print('Button Clicked')
+        self.count += 1
         self.my_text=str(self.count)
     def minus(self):
         self.count=int(self.my_text)
