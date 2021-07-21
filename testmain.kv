@@ -5,25 +5,19 @@ widgetsExample:
     cols:3
     Button:
         text:'+'
-        size_hint_x:None
-        size_hint_y:None
-        width:sp(100)
-        height:sp(50)
+
         on_press:root.plus()
     Label:
+        font_name:'fonts/Lcd.ttf'
         text:root.my_text
-        size_hint_x:None
-        size_hint_y:None
-        width:sp(100)
-        height:sp(50)
-
+        font_size:'80dp'
+        color:1,.5,1,1
     Button:
         text:'-'
         bold:True
         font_size:10
-        size_hint_x:None
-        size_hint_y:None
-        width:sp(100)
-        height:sp(50)
-        on_press:root.minus()
 
+        on_press:root.minus()
+    ToggleButton:
+        text:'Toggle'
+        on_state:root.on_state(self)
