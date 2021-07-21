@@ -1,8 +1,26 @@
-widgetsExample:
+Images:
+
+
+<Images@GridLayout>:
+    cols:3
+    Image:
+        source:"D:\kivy\Boss Kivy\Images\download.jfif"
+
+    Image:
+        source:"D:\kivy\Boss Kivy\Images\download.jfif"
+        #source:"D:\kivy\Boss Kivy\Images\download (3).jfif"
+        allow_stretch:True
+    Image:
+        source:"D:\kivy\Boss Kivy\Images\download.jfif"
+        keep_radio:False
+        #source:"D:\kivy\Boss Kivy\Images\download (2).jfif"
+
+    #Image:
+    #    source:"D:\kivy\Boss Kivy\Images\download (1).jfif"
 <widgetsExample>:
 
     #rows:3
-    cols:3
+    cols:2
     Button:
         text:'+'
 
@@ -20,4 +38,36 @@ widgetsExample:
         on_press:root.minus()
     ToggleButton:
         text:'Toggle'
-        on_state:root.on_state(self)
+        on_state:root.on_State(self)
+    Switch:
+        id:MY_Switch
+        on_active:root.on_Switch(self)
+    Slider:
+        id:my_slider
+        min:0
+        max:100
+        value:50
+        orientation:'vertical'
+        on_value:root.on_Slider(self)
+        disabled:not MY_Switch.active
+    Label:
+        font_name:'fonts/Lcd.ttf'
+        text:root.Slider_value
+        font_size:sp(80)
+    BoxLayout:
+        Label:
+            text:str(int(my_slider.value))
+        ProgressBar:
+            id:bar
+            max:100
+            value:my_slider.value
+    TextInput:
+        id:TextInput_text
+        size_hint:(None,1)
+        width:'100dp'
+        text:'Food'
+        multiline:False
+        on_text_validate:root.On_Text_Validate(self)
+
+    Label:
+        text:root.text_input_str

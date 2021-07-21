@@ -1,12 +1,16 @@
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty,BooleanProperty
 
 class widgetsExample(GridLayout):
 
     my_text=StringProperty('1')
     count=1
     count_Enable=False
+    Slider_value=StringProperty('0')
+    text_input_str=StringProperty('foo')
+
+
     def plus(self):
         if self.count_Enable:
 
@@ -34,6 +38,25 @@ class widgetsExample(GridLayout):
         else:
             Button_state.text='ON'
             self.count_Enable=True
+    def on_Switch(self,widget):
+        print(widget.active)
+        if widget.active:
+            self.Slider_value=str(100)
+        else:
+            self.Slider_value=str(0)
+
+
+
+    def on_Slider(self,widget):
+        print('Slider:',str(int(widget.value)))
+        self.Slider_value=str(int(widget.value))
+
+    def On_Text_Validate(self,widget):
+        print(widget.text)
+        self.text_input_str=widget.text
+
+
+
 
 class testMainApp(App):
     pass
