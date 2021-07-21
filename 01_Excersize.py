@@ -1,6 +1,6 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty,BooleanProperty
 from kivy.uix.floatlayout import FloatLayout
 kv_Design="""
 
@@ -16,6 +16,7 @@ kv_Design="""
         size_hint:(.2,.1)
         pos_hint:{'center_x':.3,'center_y':.5}
         on_press:root.minus()
+        disabled:not root.Toggle_is_Enable
     Label:
         id:l1
         font_name:'fonts/Lcd.ttf'
@@ -28,11 +29,12 @@ kv_Design="""
         size_hint:(.2,.1)
         pos_hint:{'center_x':.7,'center_y':.5} 
         on_press:root.plus()
+        disabled:not root.Toggle_is_Enable
 """
 class mywidget(FloatLayout):
     my_text=StringProperty('0')
     count=1
-    Toggle_is_Enable=False
+    Toggle_is_Enable=BooleanProperty(False)
     def minus(self):
         if self.Toggle_is_Enable:
             if self.my_text=='0':
