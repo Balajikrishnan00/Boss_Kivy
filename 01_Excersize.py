@@ -1,8 +1,9 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.properties import StringProperty,BooleanProperty
+from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.floatlayout import FloatLayout
-kv_Design="""
+
+kv_Design = """
 
 <mywidget>
 
@@ -31,37 +32,44 @@ kv_Design="""
         on_press:root.plus()
         disabled:not root.Toggle_is_Enable
 """
+
+
 class mywidget(FloatLayout):
-    my_text=StringProperty('0')
-    count=1
-    Toggle_is_Enable=BooleanProperty(False)
+    my_text = StringProperty('0')
+    count = 1
+    Toggle_is_Enable = BooleanProperty(False)
+
     def minus(self):
         if self.Toggle_is_Enable:
-            if self.my_text=='0':
+            if self.my_text == '0':
                 return 0
 
             else:
-                self.count=int(self.my_text)-1
-                self.my_text=str(self.count)
-
+                self.count = int(self.my_text) - 1
+                self.my_text = str(self.count)
 
     def plus(self):
         if self.Toggle_is_Enable:
-
-            self.my_text=str(self.count)
+            self.my_text = str(self.count)
             self.count += 1
-    def Toggle_Button(self,i):
+
+    def Toggle_Button(self, i):
         print(i.state)
-        if i.state =='normal':
-            i.text='OFF'
-            self.Toggle_is_Enable=False
+        if i.state == 'normal':
+            i.text = 'OFF'
+            self.Toggle_is_Enable = False
         else:
-            i.text='ON'
-            self.Toggle_is_Enable=True
+            i.text = 'ON'
+            self.Toggle_is_Enable = True
+
+
+def build():
+    Builder.load_string(kv_Design)
+    return mywidget()
+
+
 class Main(App):
-    def build(self):
-        Builder.load_string(kv_Design)
-        return mywidget()
+    pass
 
 
 Main().run()
